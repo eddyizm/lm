@@ -7,7 +7,7 @@ if(isset($_POST['message'])){
 	$message = $_POST['message'];
     
 	
-	$to      = 'eddyizm@me.com';
+	$to      = 'lulamcervantes@gmail.com';
 	$subject = 'Reiki Contact Form';
 
 	$headers = 'From: '. $email . "\r\n" .
@@ -23,7 +23,7 @@ if(isset($_POST['message'])){
 		$res['message'] = 'Form Submission Successful';
     }
 	else{
-		$res['message'] = 'Failed to send mail. Please mail me to eddyizm@me.com';
+		$res['message'] = 'Failed to send mail. Please mail me to lulamcervantes@gmail.com';
 	}
 	
 	

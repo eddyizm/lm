@@ -166,7 +166,7 @@ Private sessions are structured for each individual with hand on Reiki adjustmen
 						<h2 class="pfblock-title">Workshops</h2>
 						<div class="pfblock-line"></div>
 						<div class="pfblock-subtitle">
-							<a data-toggle="modal" href="#myModal">Reiki level 1 attunement workshop 7/15-7/16 @ LaKoet Salon JC</a>
+							<a data-toggle="modal" href="#myModal">Reiki level 1 attunement workshop 7/16-7/17 @ LaKoet Salon JC</a>
 						</div>
 					</div>
 
@@ -219,7 +219,7 @@ LaKoet Salon is located at 301 1st Jersey City,NJ 07302<br><br>
             
             <div class="row">
                <div class="col-sm-6 col-sm-offset-3">
-				<h2 class="text-center"> Reiki Level 1</h2>
+				<h2 class="text-center">Reiki Level 1</h2>
 		   </div>
 		   </div>
 			 <div class="row">
@@ -235,10 +235,7 @@ LaKoet Salon is located at 301 1st Jersey City,NJ 07302<br><br>
 			
 			</div>
 			</div>
-			
-			<!-- <div class="row"> -->
-			<!-- <p class="text-center"> for more information contact me <a href="mailto:lulamcervantes@gmail.com">lulamcervantes@gmail.com </a></p> -->
-			<!-- </div> -->
+
 			
 		</div><!-- .contaier -->
 
@@ -298,10 +295,10 @@ Reiki Master with Cynthia LoRe<br>
 				<div class="col-sm-6 col-sm-offset-3">
 
 					<div class="pfblock-header">
-						<h2 class="pfblock-title">Drop me a line</h2>
+						<h2 class="pfblock-title">Contact</h2>
 						<div class="pfblock-line"></div>
 						<div class="pfblock-subtitle">
-							<p class="text-center">  <a href="mailto:lulamcervantes@gmail.com">lulamcervantes@gmail.com </a></p>
+							<p class="text-center" id="cText" >Please contact with any questions, concerns, or just to say hi!</p>
 						</div>
 					</div>
 
@@ -352,18 +349,16 @@ Reiki Master with Cynthia LoRe<br>
 				<div class="col-sm-12">
 
 					<ul class="social-links">
-						<li><a href="index.html#" class="wow fadeInUp"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="index.html#" class="wow fadeInUp" data-wow-delay=".1s"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="index.html#" class="wow fadeInUp" data-wow-delay=".2s"><i class="fa fa-google-plus"></i></a></li>
-						<li><a href="index.html#" class="wow fadeInUp" data-wow-delay=".4s"><i class="fa fa-pinterest"></i></a></li>
-						<li><a href="index.html#" class="wow fadeInUp" data-wow-delay=".5s"><i class="fa fa-envelope"></i></a></li>
+						<li><a href="https://facebook.com/lulacervanteshealing" class="wow fadeInUp"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="http://instagram.com/lulacervanteshealing" class="wow fadeInUp" data-wow-delay=".1s"><i class="fa fa-instagram"></i></a></li>
 					</ul>
 
 					<p class="heart">
-                        Made with <span class="fa fa-heart fa-2x animated pulse"></span> in Nottingham
+                        Made with <span class="fa fa-heart fa-2x animated pulse"></span> in California
                     </p>
-                    <p class="copyright">
-                        © 2017 Lula M. Cervantes 
+                    <p id="copyDate" class="copyright">
+						© 2020 Lula M. Cervantes 
+
 					</p>
 
 				</div>
@@ -395,6 +390,10 @@ Reiki Master with Cynthia LoRe<br>
     <script src="assets/js/waypoints.min.js"></script>
     <script src="assets/js/jquery.cbpQTRotator.js"></script>
 	<script src="assets/js/custom.js"></script>
+	<script>
+	var date = new Date();
+	document.getElementById("copyDate").innerHTML = "© "+ date.getFullYear()+ " Lula M. Cervantes";
+	</script>
 
 </body>
 </html>

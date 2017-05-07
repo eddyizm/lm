@@ -162,6 +162,11 @@
 							success		: function(res){
 											var ret = $.parseJSON(JSON.stringify(res));
 											response.html(ret.message).fadeIn(500);
+											// added all this code to fade all the form input fields after successfully submitting
+											var f = $('#contact-form').hide();
+											document.getElementById("cText").innerHTML = "Thank you for your message. I will respond as soon as the my unicorn stops for water.";
+											alert(ret.message);
+											// end 
 							}
 						});
 				}           
