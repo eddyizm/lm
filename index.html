@@ -214,7 +214,7 @@ Private sessions are structured for each individual with hand on Reiki adjustmen
 <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
-</p>
+
 				</div>
 				<div class="modal-footer">
 				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -352,23 +352,31 @@ Reiki Master with Cynthia LoRe<br>
 
 					<form id="contact-form" role="form">
 						<div class="ajax-hidden">
-							<div class="form-group wow fadeInUp">
+							<!-- <div class="form-group wow fadeInUp">
 								<label class="sr-only" for="c_name">Name</label>
 								<input type="text" id="c_name" class="form-control" name="c_name" placeholder="Name">
-							</div>
+							</div> -->
 
 							<div class="form-group wow fadeInUp" data-wow-delay=".1s">
-								<label class="sr-only" for="c_email">Email</label>
-								<input type="email" id="c_email" class="form-control" name="c_email" placeholder="E-mail">
+								<label class="sr-only" for="_replyto">Email</label>
+								<input class="form-control" type="email" name="_replyto" required placeholder="email@address.com">
+								<!-- <input type="email" id="c_email" class="form-control" name="c_email" placeholder="E-mail"> -->
 							</div>
 
 							<div class="form-group wow fadeInUp" data-wow-delay=".2s">
-								<textarea class="form-control" id="c_message" name="c_message" rows="7" placeholder="Message"></textarea>
+									<textarea class="form-control" name="message" placeholder="Message" required rows=""></textarea>
+								<!-- <textarea class="form-control" id="c_message" name="c_message" rows="7" placeholder="Message"></textarea> -->
 							</div>
 
-							<button type="submit" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".3s">Send Message</button>
+							<button id="sendBtn" type="submit" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".3s">Send Message</button>
 						</div>
-						<div class="ajax-response"></div>
+						<div id="submit-success" style= "display: none;">
+								Message received! I'll be in touch.
+							</div>
+							<div id="submit-errors" style= "display: none;">
+								It looks like there was an error submitting the form. Please try again later.
+							</div>
+						<!-- <div class="ajax-response"></div> -->
 					</form>
 
 				</div>
@@ -424,12 +432,35 @@ Reiki Master with Cynthia LoRe<br>
 	<script src="assets/js/jquery.parallax-1.1.3.js"></script>
 	<script src="assets/js/imagesloaded.pkgd.js"></script>
 	<script src="assets/js/jquery.sticky.js"></script>
-	<script src="assets/js/smoothscroll.js"></script>
+	<!-- <script src="assets/js/smoothscroll.js"></script> -->
 	<script src="assets/js/wow.min.js"></script>
     <script src="assets/js/jquery.easypiechart.js"></script>
     <script src="assets/js/waypoints.min.js"></script>
     <script src="assets/js/jquery.cbpQTRotator.js"></script>
 	<script src="assets/js/custom.js"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+	<script>
+			$("#contact-form").validate({
+				submitHandler: function (form) {
+					$.ajax({
+						url: "//formspree.io/eddyizm@me.com",
+						method: "POST",
+						data: {
+							_replyto: $(form).find("input[name='_replyto']").val(),
+							message: $(form).find("textarea[name='message']").val()
+						},
+						dataType: "json",
+						success: function() {
+						$("#submit-success").fadeIn();
+						$("#contact-form").fadeOut();
+					},
+					error: function() {
+						$("#submit-errors").fadeIn();        
+					}
+					});
+				}
+			});
+		</script>
 	<script>
 	var date = new Date();
 	document.getElementById("copyDate").innerHTML = "© "+ date.getFullYear()+ " Lula M. Cervantes";
